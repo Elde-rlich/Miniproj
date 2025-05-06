@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ journal.title }}</title>
+    <link rel="stylesheet" href="{% static 'journal/journal-styles.css' %}">
+</head>
+<body>
+    <div class="journal-detail">
+        <h1>{{ journal.title }}</h1>
+        <p>{{ journal.content }}</p>
+        <p>Created on: {{ journal.date_created|date:"F j, Y" }}</p>
+        <a href="{% url 'journal_list' %}">Back to Journals</a>
+    </div>
+</body>
+</html>

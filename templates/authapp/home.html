@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Dashboard</title>
+    <link rel="stylesheet" href="{% static 'default/home-style.css' %}">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" class="profile-img">
+                <div class="profile-info">
+                    <h2>{{ user.username }}</h2>
+                    <p>{{ user.email }}</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-item"><a class="menu-item" href="{% url 'home' %}">Dashboard</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'journal_list' %}">Journal</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'activities' %}">Activities</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'settings_main' %}">Settings</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'chatbot' %}">Chatbot</a></div>
+                <!-- Logout Button -->
+                <div class="menu-item">
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main content with curved corners -->
+        <div class="main-area">
+            <main class="main-content">
+                <header class="header">
+                    <h1>Dashboard</h1>
+                    <!-- content of dashboard-->
+                </header>
+            </main>
+
+            <!-- Summary Section -->
+            <aside class="summary">
+                <header>
+                    <h3>Extra Content here</h3>
+                    <!-- some content for right side of dashboard like quotes or something-->
+                </header>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

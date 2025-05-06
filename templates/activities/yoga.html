@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Dashboard</title>
+    <link rel="stylesheet" href="{% static 'activities/yoga/yo.css' %}">
+    <link rel="stylesheet" href="{% static 'default/home-style.css' %}">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" class="profile-img">
+                <div class="profile-info">
+                    <h2>Sandy</h2>
+                    <p>sandy@gmail.com</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-item"><a class="menu-item" href="{% url 'home' %}">Dashboard</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'journal_list' %}">Journal</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'activities' %}">Activities</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'chatbot' %}">Chatbot</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'settings_main' %}">Settings</a></div>
+                
+                <!-- Logout Button -->
+                <div class="menu-item">
+                    <form method="post" action="{% url 'logout' %}">
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </aside>                
+
+        <!-- Main content with curved corners -->
+        <div class="activity-main-area">
+            <main class="activity-main-content">
+
+                <!-- Activities Header -->
+                <div class="activities-header-wrapper">
+                    <header class="activities-header">
+                        <h1>YOGA</h1>
+                    </header>
+                </div>  
+               <!-- Activity Cards -->
+                <div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-1.jpg' %}" alt="Breathing Exercise" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 1: Pranamasana </h2>
+                        <p>Stand at the edge of your mat, keep your feet together and balance your weight equally on both feet. Expand your chest and relax your shoulders. As you breathe in, lift both arms up from the sides, and as you exhale, bring your palms together in front of the chest in a prayer position.</p>
+                    </div>
+                </div>
+		<div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-2.jpg' %}"alt="Breathing Exercise" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 2: Hastauttanasana </h2>
+                        <p>Breathing in, lift the arms up and back, keeping the biceps close to the ears. In this pose, the effort is to stretch the whole body up from the heels to the tips of the fingers.You may push the pelvis forward a little bit. Ensure you’re reaching up with the fingers rather than trying to bend backward.</p>
+                    </div>
+                </div>
+		<div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-3.jpg' %}"alt="Breathing Exercise" class="activity-image">
+                    <div class="activity-info">
+                         <h2>Step 3: Hastapadasana </h2>
+                         <p>Breathing out, bend forward from the waist keeping the spine erect. As you exhale completely, bring the hands down to the floor beside the feet.You may bend the knees, if necessary, to bring the palms down to the floor. Now make a gentle effort to straighten the knees. It’s a good idea to keep the hands fixed in this position and not move them henceforth until we finish the sequence.</p>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-4.jpg' %}"alt="Yoga Class" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 4: Ashwa Sanchalanasana </h2>
+                        <p>Breathing in, push your right leg back, as far back as possible. Bring the right knee to the floor and look up. Ensure that the left foot is exactly in between the palms.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-5.jpg' %}"alt="Guided Meditation" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 5: Dandasana </h2>
+                        <p>As you breathe in, take the left leg back and bring the whole body in a straight line. Keep your arms perpendicular to the floor..</p>
+                    </div>
+                </div>
+<div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-6.jpg' %}" alt="Guided Meditation" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 6: Ashtanga Namaskara </h2>
+                        <p>Gently bring your knees down to the floor and exhale. Take the hips back slightly, slide forward, rest your chest and chin on the floor. Raise your posterior a little bit. The two hands, two feet, two knees, chest and chin (eight parts of the body) should touch the floor.</p>
+                    </div>
+                </div>
+
+<div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-7.jpg' %}" alt="Guided Meditation" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 7: Bhujangasana </h2>
+                        <p>Slide forward and raise the chest up into the Cobra pose. You may keep your elbows bent in this pose with the shoulders away from the ears. Look up at the ceiling. As you inhale, make a gentle effort to push the chest forward; as you exhale, make a gentle effort to push the navel down. Tuck the toes under. Ensure you’re stretching just as much as you can and not forcing your body.</p>
+                    </div>
+                </div>
+<div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-8.jpg' %}" alt="Guided Meditation" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 8: Adho Mukha Svanasana </h2>
+                        <p>Breathing out, lift the hips and the tailbone up to bring the body into an inverted ‘V’ pose. If possible, try and keep the heels on the ground and make a gentle effort to lift the tailbone up, going deeper into the stretch.</p>
+                    </div>
+                </div>
+<div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-9.jpg' %}" alt="Guided Meditation" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 9: Ashwa Sanchalanasana </h2>
+                        <p>Breathing in, bring the right foot forward in between the two hands. The left knee goes down on the floor. Press the hips down and look up. Place the right foot exactly between the two hands and the right calf perpendicular to the floor. In this position, make a gentle effort to push the hips down towards the floor, to deepen the stretch.</p>
+                    </div>
+                </div>
+<div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-10.jpg' %}" alt="Guided Meditation" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 10: Hastapadasana </h2>
+                        <p>Breathing out, bring the left foot forward. Keep the palms on the floor. You may bend the knees, if necessary. Gently straighten the knees, and if you can, try and touch your nose to the knees. Keep breathing.</p>
+                    </div>
+                </div>
+<div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-11.jpg' %}" alt="Guided Meditation" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 11: Hastauttanasana </h2>
+                        <p>Breathing in, roll the spine up. Raise the hands up and bend backward a little bit, pushing the hips slightly outward. Ensure that your biceps are beside your ears. The idea is to stretch up more rather than stretching backward.</p>
+                    </div>
+                </div>
+<div class="activity-card">
+                    <img src="{% static 'activities/yoga/Surya-Namaskar-step-12.jpg' %}" alt="Guided Meditation" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 12: Tadasana </h2>
+                        <p>As you exhale, first straighten the body, then bring the arms down. Relax in this position and observe the sensations in your body.</p>
+                    </div>
+                </div>
+	    </main>
+	</div>
+    </div>
+</body>

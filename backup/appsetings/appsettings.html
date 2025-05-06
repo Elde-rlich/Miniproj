@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Dashboard</title>
+    <link rel="stylesheet" href="{% static 'dashboard/home-style.css' %}">
+    <link rel="stylesheet" href="{% static 'appsettings/appsetting-style.css' %}">
+    <link rel="stylesheet" href="{% static 'appsettings/appsettings-style.css' %}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="{% static 'dashboard/profile.jpg' %}" alt="profile" class="profile-img">
+                <div class="profile-info">
+                    <h2>Sandy</h2>
+                    <p>sandy@gmail.com</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-item"><a class="menu-item" href="{% url 'home' %}">Dashboard</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'journal_list' %}">Journal</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'activities' %}">Activities</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'settings_main' %}">Settings</a></div>
+                 <!-- Logout Button -->
+                 <div class="menu-item">
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </aside>
+
+          <!-- Main Settings content -->
+          <div class="main-area">
+            <main class="main-content">
+                <header class="header">
+                    <h1>Settings</h1>
+                </header>
+                <section class="settings-section">
+                    <!-- Profile Settings Dropdown -->
+                    <div class="settings-group">
+                        <h2 onclick="toggleDropdown('profile-settings')">Profile Settings ▼</h2>
+                        <div id="profile-settings" class="dropdown-content">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" value="Sandy">
+                            
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="sandy@gmail.com">
+                            
+                            <button class="save-button">Save Changes</button>
+                        </div>
+                    </div>
+
+                    <!-- Password Settings Dropdown -->
+                    <div class="settings-group">
+                        <h2 onclick="toggleDropdown('password-settings')">Password Settings ▼</h2>
+                        <div id="password-settings" class="dropdown-content">
+                            <label for="current-password">Current Password</label>
+                            <input type="password" id="current-password">
+                            
+                            <label for="new-password">New Password</label>
+                            <input type="password" id="new-password">
+                            
+                            <label for="confirm-password">Confirm New Password</label>
+                            <input type="password" id="confirm-password">
+                            
+                            <button class="save-button">Update Password</button>
+                        </div>
+                    </div>
+                     <!-- About App Dropdown -->
+                     <div class="settings-group">
+                        <h2 onclick="toggleDropdown('about-app')">About App ▼</h2>
+                        <div id="about-app" class="dropdown-content">
+                            <p>This app helps all jobless people.
+                                JOBLESSS...???
+                                Yes you are......
+                                You are jobless and not depressed because if you had work you wouldn't have wasted your time being depressed.
+                                So shut your mouth and do your work IDIOT!!!
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Logout Dropdown -->
+                    <div class="settings-group">
+                        <h2 onclick="toggleDropdown('logout')">Logout ▼</h2>
+                        <div id="logout" class="dropdown-content">
+                            <button class="save-button" onclick="logout()">Log Out</button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    
+
+    <script>
+        // Function to toggle dropdown visibility
+        function toggleDropdown(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+         // Logout function
+         function logout() {
+            alert("You have been logged out.");
+        }
+    </script>
+</body>
+</html>

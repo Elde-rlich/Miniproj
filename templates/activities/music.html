@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'default/home-style.css' %}">
+    <link rel="stylesheet" href="{% static 'activities/music/music.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>BiNgO - Music Player</title>
+</head>
+
+<body>
+
+    <div class="background">
+        <img src="{% static 'activities/music/cover/default.jpg' %}" id="bg-img" alt="Background Image">
+    </div>
+
+    <div class="container">
+        <!-- Player image -->
+        <div class="player-img">
+            <img src="{% static 'activities/music/cover/default.jpg' %}" id="cover" alt="Cover Image">
+        </div>
+
+        <!-- Song Title and Artist -->
+        <h2 id="music-title">Select a Track</h2>
+        <h3 id="music-artist">Artist</h3>
+
+        <!-- Progress Bar -->
+        <div class="player-progress" id="player-progress">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <!-- Current Time and Duration -->
+        <div class="music-duration">
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+
+        <!-- Player Controls -->
+        <div class="player-controls">
+            <i class="fa-solid fa-backward" title="Previous" id="prev"></i>
+            <i class="fa-solid fa-play play-button" title="Play" id="play"></i>
+            <i class="fa-solid fa-forward" title="Next" id="next"></i>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script id="songs-data" type="application/json">
+        [
+            {
+                "path": "{% static 'activities/music/assets/1.mp3' %}",
+                "displayName": "Stan",
+                "cover": "{% static 'activities/music/cover/1.jpg' %}",
+                "artist": "Lofi fruits"
+            },
+            {
+                "path": "{% static 'activities/music/assets/2.mp3' %}",
+                "displayName": "Night trouble",
+                "cover": "{% static 'activities/music/cover/2.jpg' %}",
+                "artist": "Lofi fruits"
+            },
+            {
+                "path": "{% static 'activities/music/assets/3.mp3' %}",
+                "displayName": "After Midnight",
+                "cover": "{% static 'activities/music/cover/3.jpg' %}",
+                "artist": "Lofi fruits"
+            },
+            {
+                "path": "{% static 'activities/music/assets/4.mp3' %}",
+                "displayName": "Cat",
+                "cover": "{% static 'activities/music/cover/4.jpg' %}",
+                "artist": "Lofi fruits"
+            },
+            {
+                "path": "{% static 'activities/music/assets/5.mp3' %}",
+                "displayName": "Warm Embrace",
+                "cover": "{% static 'activities/music/cover/5.jpg' %}",
+                "artist": "Lofi fruits"
+            },
+            {
+                "path": "{% static 'activities/music/assets/6.mp3' %}",
+                "displayName": "Cosmos",
+                "cover": "{% static 'activities/music/cover/6.jpg' %}",
+                "artist": "Lofi fruits"
+            }
+        ]
+    </script>    
+    <script src="{% static 'activities/music/music.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+/* Journal Create Styles */
+body {
+    background-color: #f4f4f9; /* Light background for the page */
+    font-family: Arial, sans-serif; /* Clean font for readability */
+}
+
+/* App Container */
+.app-container {
+    display: flex;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px; /* Fixed width for the sidebar */
+    background-color: #fff; /* White background for the sidebar */
+    border-right: 1px solid #ddd; /* Light border on the right */
+    padding: 20px; /* Padding inside the sidebar */
+    height: 100vh; /* Full height */
+    position: sticky; /* Sticky position for scrolling */
+}
+
+/* Profile Section */
+.profile {
+    text-align: center; /* Center align profile info */
+    margin-bottom: 20px; /* Margin below profile */
+}
+
+.profile-img {
+    width: 80px; /* Fixed size for profile image */
+    height: 80px; /* Fixed size for profile image */
+    border-radius: 50%; /* Circular profile image */
+}
+
+/* Menu Styles */
+.menu {
+    margin-top: 20px; /* Margin on top of the menu */
+}
+
+.menu-item {
+    padding: 10px 15px; /* Padding for menu items */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.menu-item:hover {
+    background-color: #f0f0f0; /* Light hover effect */
+}
+
+/* Main Content Area */
+.main-area {
+    flex-grow: 1; /* Take remaining space */
+    padding: 20px; /* Padding around main content */
+}
+
+/* Header Styles */
+.header {
+    margin-bottom: 20px; /* Space below header */
+}
+
+/* Journal Create Form Styles */
+.journal-create-form {
+    background-color: #fff; /* White background for form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding inside form */
+}
+
+/* Form Element Styles */
+form {
+    display: flex; /* Flexbox for form layout */
+    flex-direction: column; /* Column layout for elements */
+}
+
+/* Button Styles */
+button {
+    padding: 10px; /* Padding for buttons */
+    background-color: #333; /* Dark background for button */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #555; /* Lighter background on hover */
+}
+
+/* Error Message Styles */
+.error-message {
+    color: red; /* Red color for error messages */
+    margin-top: 10px; /* Space above error messages */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Hide sidebar on smaller screens */
+    }
+
+    .main-area {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .journal-create-form {
+        padding: 15px; /* Reduce padding inside the form */
+    }
+
+    button {
+        font-size: 14px; /* Smaller font size for buttons */
+    }
+}

@@ -1,0 +1,181 @@
+/* Chatbot Main Area Styling */
+.chatbot-main-area {
+    flex-grow: 1; /* Make this area expand to occupy the remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding does not affect the width */
+    background-color: #ded7d3; /* Optional background for the chatbot area */
+    border-radius: 25px 25px 25px 25px;
+    overflow: hidden;
+}
+
+/* Chatbot Container */
+.chatbot-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    max-height: 800px;
+    background-color: #f7f9fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px 25px 25px 25px;
+}
+
+/* Chatbot Header */
+.chatbot-header {
+    background-color: #111;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #e3e3e3;
+    border-radius: 25px 25px 0px 0px;
+}
+
+/* Chatbot Body */
+.chatbot-body {
+    flex-grow: 1;
+    flex: 0 0 540px;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Chat Bubbles */
+.bot-message {
+    align-self: flex-start;
+    background-color: #232323d8;
+    color: #e0f7fa;
+    padding: 10px 15px;
+    border-radius: 15px 15px 15px 0;
+    max-width: 70%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #4c8bf5;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px 15px 0 15px;
+    max-width: 70%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Chatbot Footer */
+.chatbot-footer {
+    display: flex;
+    padding: 10px;
+    background-color: #111;
+    border-top: 1px solid #e3e3e3;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.chatbot-footer input {
+    flex-grow: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #2d2d2d;
+    color: white;
+}
+
+.chatbot-footer input:focus {
+    outline: none;
+}
+
+.chatbot-footer button {
+    background-color: #2d2d2d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.chatbot-footer button:hover {
+    background-color: #3a6dc7;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    align-self: flex-start;
+    background-color: #e0f7fa;
+    color: #888; /* Lighter text color to indicate it's temporary */
+    padding: 10px 15px;
+    border-radius: 15px 15px 15px 0;
+    max-width: 70%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-size: 16px;
+}
+/* Typing Indicator */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #757575; /* Gray color for dots */
+}
+
+.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #757575;
+    border-radius: 50%;
+    animation: typing-animation 1.5s infinite;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing-animation {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+}

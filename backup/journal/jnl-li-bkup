@@ -1,0 +1,9 @@
+<h2>Your Journal Entries</h2>
+<a href="{% url 'journal_create' %}">Create New Entry</a>
+<ul>
+    {% for journal in journals %}
+    <li>
+        <a href="{% url 'journal_detail' journal.pk %}">{{ journal.title }}</a> - {{ journal.date_created }}
+    </li>
+    {% endfor %}
+</ul>

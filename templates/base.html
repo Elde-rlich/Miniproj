@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Expense Dashboard{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'default/home-style.css' %}">
+    {% block additional_styles %}{% endblock %}
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" class="profile-img">
+                <div class="profile-info">
+                    <h2>{{ user.username }}</h2>
+                    <p>{{ user.email }}</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-item"><a class="menu-item" href="{% url 'home' %}">Dashboard</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'journal_list' %}">Journal</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'activities' %}">Activities</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'settings_main' %}">Settings</a></div>
+                <!-- Logout Button -->
+                <div class="menu-item">
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-area">
+            <main class="main-content">
+                {% block main_content %}
+                <!-- This block will be overridden in child templates -->
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+
+    {% block additional_scripts %}{% endblock %}
+</body>
+</html>

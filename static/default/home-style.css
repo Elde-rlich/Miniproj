@@ -1,0 +1,136 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #111; 
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #010203;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-info h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.menu {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.menu-item {
+    width: 100%; 
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer; 
+    color: #bbb;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    color: white;
+}
+
+/* Main Content and Curved Container */
+.main-area {
+    display: flex;
+    flex-grow: 1;
+    background-color: #010203;
+    overflow: hidden;
+}
+
+/* Main content styles */
+.main-content {
+    padding: 20px; /* Reduced padding to decrease height */
+    background-color: white;
+    border-radius: 25px 0 0 0; /* Rounded corners for both sides */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    flex-grow: 1; /* Allow to take up remaining space */
+}
+
+.summary {
+    padding: 20px; /* Reduced padding to decrease height */
+    background-color: white;
+    border-radius: 0 25px 0 0; /* Rounded corners for both sides */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.header p {
+    font-size: 14px;
+    color: #888;
+}
+
+.summary {
+    width: 300px;
+    background-color: #f9fafc;
+}
+
+.summary h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Logout Button Styles */
+.logout-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-btn:hover {
+    background-color: #ff3333;
+}

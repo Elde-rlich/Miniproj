@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Dashboard</title>
+    <link rel="stylesheet" href="{% static 'default/home-style.css' %}">
+    <link rel="stylesheet" href="{% static 'activities/activities.css' %}">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+            <!--The profile pic is dynamic --> 
+                <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" class="profile-img">
+                <div class="profile-info">
+                    <h2>{{ user.username }}</h2>
+                    <p>{{ user.email }}</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-item"><a class="menu-item" href="{% url 'home' %}">Dashboard</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'journal_list' %}">Journal</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'activities' %}">Activities</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'chatbot' %}">Chatbot</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'settings_main' %}">Settings</a></div>
+
+                 <!-- Logout Button -->
+                 <div class="menu-item">
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main content with curved corners -->
+        <div class="activity-main-area">
+            <main class="activity-main-content">
+
+                <!-- Activities Header -->
+                <div class="activities-header-wrapper">
+                    <header class="activities-header">
+                        <h1>ACTIVITIES</h1>
+                    </header>
+                </div>                
+
+                <!-- Wellness and Lifestyle -->
+                <div class="activity-section">
+                    <h2>Wellness and Lifestyle</h2>
+                    <div class="cards-section">
+
+                        <a href="{% url 'meditation' %}" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="{% static 'activities/meditation/meditation.jpg'%}" alt="Meditation Image">
+                            </div>
+                            <div class="card-title">
+                                <p>Meditation</p>
+                            </div>
+                        </div>
+                        </a>
+
+                        <a href="{% url 'yoga' %}" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="{% static 'activities/yoga/yoga.jpg'%}" alt="Game Image">
+                            </div>
+                            <div class="card-title">
+                                <p>Yoga</p>
+                            </div>
+                        </div>
+                        </a>
+
+                        <a href="{% url 'breathing' %}" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="{% static 'activities/breathing/breathing.jpg'%}" alt="Game Image">
+                            </div>
+                            <div class="card-title">
+                                <p>Breathing Exercises</p>
+                            </div>
+                        </div>
+                        </a>
+
+                        
+
+                    </div>
+                </div>
+
+                <!-- Music -->
+                <div class="activity-section">
+                    <h2>Music Therapy</h2>
+                    <div class="cards-section">
+
+                        <a href="{% url 'music' %}" target = "_blank" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="{% static 'activities/lofi.jpg'%}" alt="Game Image">
+                            </div>
+                            <div class="card-title">
+                                <p>Chill Lofi beats</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!--Mini games-->
+                <div class="activity-section">
+                    <h2>Mini Games</h2>
+                    <div class="cards-section">
+
+                        <a href="{% url 'tictactoe' %}" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="{% static 'activities/games/tic-tac/tictactoe.png'%}" alt="">
+                            </div>
+                            <div class="card-title">
+                                <p>Tic-Tac-Toe</p>
+                            </div>
+                        </div>
+                        </a>
+
+                        <a href="{% url '2048' %}" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="{% static 'activities/games/2048/2048.png'%}" alt="">
+                            </div>
+                            <div class="card-title">
+                                <p>2048</p>
+                            </div>
+                        </div>
+                        </a>
+
+                        <a href="{% url 'snake' %}" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="{% static 'activities/games/snake/snake.jpeg'%}" alt="">
+                            </div>
+                            <div class="card-title">
+                                <p>Snake</p>
+                            </div>
+                        </div>
+                        </a>
+                        
+                        <!--<a href="" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="" alt="">
+                            </div>
+                            <div class="card-title">
+                                <p>Title</p>
+                            </div>
+                        </div>
+                        </a>-->
+
+                    </div>
+                </div>
+
+
+                <!-- Puzzles and Brain Teasers -->
+                <!--<div class="activity-section">
+                    <h2>Puzzles and Brain teasers</h2>
+                    <div class="cards-section">
+
+                        <a href="" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="" alt="">
+                            </div>
+                            <div class="card-title">
+                                <p>Title</p>
+                            </div>
+                        </div>
+                        </a>
+
+                        <a href="" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="" alt="">
+                            </div>
+                            <div class="card-title">
+                                <p>Title</p>
+                            </div>
+                        </div>
+                        </a>
+
+                        <a href="" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="" alt="">
+                            </div>
+                            <div class="card-title">
+                                <p>Title</p>
+                            </div>
+                        </div>
+                        </a>
+
+                        <a href="" class="single-card-link">
+                        <div class="single-card">
+                            <div class="card-image">
+                                <img src="" alt="">
+                            </div>
+                            <div class="card-title">
+                                <p>Title</p>
+                            </div>
+                        </div>
+                        </a>
+
+                        
+                    </div>
+                </div> -->               
+            </main>
+        </div>
+
+
+    </div>
+
+
+    <!-- Place this script just before the closing body tag -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll('.activity-section');
+        const observerOptions = {
+            root: null, // viewport
+            threshold: 0.1, // trigger when 10% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+    });
+</script>
+
+</body>
+
+</html>

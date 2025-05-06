@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Dashboard</title>
+    <link rel="stylesheet" href="journal-styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="home-styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="profile.jpg" alt="profile" class="profile-img">
+                <div class="profile-info">
+                    <h2>Sandy</h2>
+                    <p>sandy@gmail.com</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-item"><a class="menu-item" href="home.html">Dashboard</a></div>
+                <div class="menu-item"><a class="menu-item" href="journal-list.html">Journal</a></div>
+                <div class="menu-item"><a class="menu-item" href="chatbot.html">Chatbot</a></div>
+                <div class="menu-item"><a class="menu-item" href="activity.html">Activity</a></div>
+                <div class="menu-item"><a class="menu-item" href="#">Logout</a></div>
+            </div>
+        </aside>
+
+        <!-- Main content with curved corners -->
+        <div class="main-area">
+            <main class="main-content">
+                <header class="header">
+                    <h1>Journal</h1>
+                </header>
+
+                <!-- Journal Entry Form -->
+                <div class="journal-entry">
+                    <input type="text" class="journal-title" placeholder="Title of your journal entry">
+                    <hr class="journal-divider">
+
+                    <!-- Editable Text Area -->
+                    <div id="editor" class="editor" contenteditable="true" placeholder="Write your thoughts here..."></div>
+
+                    <!-- Toolbar and Save Button Wrapper -->
+                    <div class="toolbar-save-wrapper">
+                        <div class="toolbar">
+                            <button id="bold" class="toolbar-btn"><i class="bi bi-type-bold"></i></button>
+                            <button id="italic" class="toolbar-btn"><i class="bi bi-type-italic"></i></button>
+                            <button id="underline" class="toolbar-btn"><i class="bi bi-type-underline"></i></button>
+                            <button id="font" class="toolbar-btn"><i class="bi bi-fonts"></i></button>
+                            <button id="attach" class="toolbar-btn"><i class="bi bi-paperclip"></i></button>
+                        </div>
+                        <button class="save-button">Save Entry</button>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+</body>
+
+</html>

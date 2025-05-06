@@ -1,0 +1,197 @@
+/* Smooth scrolling for the whole document */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+.activity-main-area {
+    display: flex;
+    flex-grow: 1;
+    background-color: #010203;
+    overflow: hidden;
+}
+
+.activity-main-content {
+    padding: 20px; 
+    background-color: white;
+    border-radius: 25px 25px 0 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; 
+
+}
+
+/* General Activity Section Styling */
+.activity-section {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; 
+}
+
+/* Ensure vertical stacking of sections */
+.activity-main-content {
+    display: block; 
+}
+
+/* Adjusting the main content to ensure scrolling */
+.activity-main-content {
+    padding: 20px; 
+    background-color: white;
+    border-radius: 25px 25px 0 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; 
+    overflow-y: auto; 
+    max-height: 100vh;
+}
+
+.activity-section h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px;
+    border-bottom: 2px solid #c4a772;
+    padding-bottom: 5px;
+}
+
+/* Header for the Activities Section */
+.activities-header-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 5px; /* Adjust padding to control border thickness */
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff6b6b, #ffdd59, #1e90ff, #ff6b6b);
+    background-size: 200% 200%;
+    animation: gradientBorder 5s linear infinite;
+    width: 100%; /* Make the wrapper take the full width */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.activities-header {
+    text-align: center;
+    padding: 20px 40px;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    width: 100%; /* Make header take the full width of the wrapper */
+    box-sizing: border-box;
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.activities-header h1 {
+    font-size: 36px;
+    margin: 0;
+    letter-spacing: 2px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/*exp animation*/
+
+
+/* Mini Games and Puzzles Layout */
+.cards-section {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Game Cards and Puzzle Cards */
+/* .single-card {
+    flex: 1;
+    height: 150px;
+    background-color: #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+
+.single-card {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+} */
+
+.single-card-link {
+    text-decoration: none; 
+    display: inline-block; 
+    color: inherit; 
+}
+.single-card {
+    flex: 0 0 auto; 
+    width: 265px;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; 
+    transition: transform 0.2s ease; 
+}
+
+.single-card:hover {
+    transform: scale(1.05); 
+}
+
+
+/* Card image section */
+.card-image {
+    height: 100%; /* Spans the entire game-card */
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire div */
+}
+
+/* Card title section */
+.card-title {
+    height: 30%;
+    background-color: #333;
+    padding: 5px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    /* backdrop-filter: blur(15px); */
+}
+
+.card-title p {
+    margin: 0;
+    font-size: 14px;
+    color: #c4a772;
+    border-bottom: 1px solid #ccc; 
+}
+
+/*animation beta*/
+/* Animation for section fade-in */
+.activity-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.activity-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

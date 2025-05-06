@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Pridi:wght@200;300;400;500;600;700&display=swap');
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9fafc;
+    margin: 0;
+}
+
+/* Overall container */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #010203;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-info h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.menu {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.menu-item {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    color: #bbb;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    color: white;
+}
+
+/* Main Area Styles */
+.main-area {
+    flex: 1;
+    padding: 0;
+    position: relative;
+    background-color: #010203;
+}
+
+.main-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px 25px 0px 0px;
+    background-color: #ded3de;
+}
+
+/* Welcome Text Styling (Top-Left) */
+.welcome-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.welcome-text {
+    font-size: 70pt; /* Larger text size */
+    font-weight: bold;
+    color: #111;
+    line-height: 1.2; /* Adjust spacing */
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.highlight {
+    display: block; /* Moves "Sandy" to the next line */
+    font-size: 90pt; /* Slightly larger font for "Sandy" */
+    color: #000;
+}
+
+/* Quote Styling (Centered) */
+.quote-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    text-align: center;
+    width: 80%; /* Optional: Limit width for better readability */
+}
+
+.quote {
+    font-size: 24pt;
+    font-family: "Pridi", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #000;
+    margin-bottom: 30px; /* Add spacing below */
+}
+
+/* Buttons Styling (Below Quote) */
+.button-container {
+    position: absolute;
+    top: calc(50% + 150px); /* Adjust the position below the quote */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between buttons */
+}
+
+.action-button {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 50px; /* Larger buttons */
+    border-radius: 25px;
+    font-size: 20px; /* Larger font size */
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #444;
+    transform: translateY(-3px);
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+    .welcome-text {
+        font-size: 48px;
+    }
+
+    .highlight {
+        font-size: 56px;
+    }
+
+    .quote {
+        font-size: 18px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .action-button {
+        width: 100%; /* Full-width buttons for smaller screens */
+    }
+}
+
+/* Logout Button Styles */
+.logout-btn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-btn:hover {
+    background-color: #ff3333;
+}

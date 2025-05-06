@@ -1,0 +1,189 @@
+/* Smooth scrolling for the whole document */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+.activity-main-area {
+    display: flex;
+    flex-grow: 1;
+    background-color: #010203;
+    overflow: hidden;
+}
+
+.activity-main-content {
+    padding: 20px; 
+    background-color: white;
+    border-radius: 25px 25px 0 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; 
+
+}
+
+/* General Activity Section Styling */
+.activity-section {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; 
+}
+
+/* Ensure vertical stacking of sections */
+.activity-main-content {
+    display: block; 
+}
+
+/* Adjusting the main content to ensure scrolling */
+.activity-main-content {
+    padding: 20px; 
+    background-color: white;
+    border-radius: 25px 25px 0 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; 
+    overflow-y: auto; 
+    max-height: 100vh;
+}
+
+.activity-section h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px;
+    border-bottom: 2px solid #c4a772;
+    padding-bottom: 5px;
+}
+
+/* Header for the Activities Section */
+.activities-header-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 5px; /* Adjust padding to control border thickness */
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff6b6b, #ffdd59, #1e90ff, #ff6b6b);
+    background-size: 200% 200%;
+    animation: gradientBorder 5s linear infinite;
+    width: 100%; /* Make the wrapper take the full width */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.activities-header {
+    text-align: center;
+    padding: 20px 40px;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    width: 100%; /* Make header take the full width of the wrapper */
+    box-sizing: border-box;
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.activities-header h1 {
+    font-size: 36px;
+    margin: 0;
+    letter-spacing: 2px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+
+       .container {
+            text-align: center;
+        }
+
+        .flower-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 500px 200px;
+        }
+
+        .petal {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+	    margin: 100px 50px;
+            background: rgba(0, 122, 255, 0.3);
+            border-radius: 50%;
+            transform-origin: 50% 100%;
+            animation: breathe 8s infinite;
+        }
+
+        /* Positioning the petals in a circular layout */
+        .petal:nth-child(1) {
+            transform: rotate(0deg) translateY(-40%);
+        }
+
+        .petal:nth-child(2) {
+            transform: rotate(60deg) translateY(-40%);
+        }
+
+        .petal:nth-child(3) {
+            transform: rotate(120deg) translateY(-40%);
+        }
+
+        .petal:nth-child(4) {
+            transform: rotate(180deg) translateY(-40%);
+        }
+
+        .petal:nth-child(5) {
+            transform: rotate(240deg) translateY(-40%);
+        }
+
+        .petal:nth-child(6) {
+            transform: rotate(300deg) translateY(-40%);
+        }
+
+        /* Breathing animation */
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(0.8) rotate(var(--rotate));
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.2) rotate(var(--rotate));
+                opacity: 1;
+            }
+        }
+
+        .breathing-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007aff;
+	    position: absolute;
+	    margin: 50px 580px;
+            animation: textChange 8s infinite;
+        }
+
+        @keyframes textChange {
+            0%, 49.9% {
+                color: #2cb67d;
+            }
+            50%, 100% {
+                color: #f05d23;
+            }
+        }
+
+        /* Alternate Text Using ::after Pseudo-element */
+        .breathing-text::after {
+            content: "Inhale";
+            animation: textSwitch 8s infinite;
+        }
+
+        @keyframes textSwitch {
+            0%, 49.9% {
+                content: "Inhale";
+            }
+            50%, 100% {
+                content: "Exhale";
+            }
+        }

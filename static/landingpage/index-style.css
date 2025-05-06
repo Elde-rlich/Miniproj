@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Albert Sans', sans-serif;
+    background-color: #ded7d3;
+    color: #2c2c2c;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ded7d3;
+}
+
+.header .logo {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 24px;
+    color: #002147; /* Dark Blue */
+}
+
+.header nav a {
+    font-size: 16px;
+    color: #004080; /* Shade of dark blue for inactive links */
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.header nav a.active {
+    color: #002147; /* Dark Blue for active link */
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Get Started Button */
+.header .get-started-button {
+    background-color: #004080; /* Medium Blue */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.header .get-started-button:hover {
+    background-color: #002147; /* Dark Blue on hover */
+}
+
+.header .get-started-button:active {
+    background-color: #001030; /* Darker blue on click */
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+}
+
+.left-section {
+    width: 50%;
+    text-align: center;
+}
+
+.left-section img {
+    max-width: 100%;
+}
+
+.left-section p {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #336699; /* Light Blue */
+}
+
+.right-section {
+    width: 45%;
+}
+
+.right-section h1 {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 48px;
+    line-height: 1.2;
+    color: #002147; /* Dark Blue */
+    margin-bottom: 20px; /* Space below the main heading */
+}
+
+.right-section .subheading {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 20px;
+    color: #004080; /* Medium Blue */
+}
+
+.right-section .description {
+    font-size: 16px;
+    margin: 15px 0;
+    color: #336699; /* Light Blue */
+}
+
+/* Login and Signup Buttons */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-group .button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.button-group .login-button {
+    background-color: #004080; /* Medium Blue */
+}
+
+.button-group .login-button:hover {
+    background-color: #002147; /* Dark Blue on hover */
+}
+
+.button-group .login-button:active {
+    background-color: #001030; /* Darker blue on click */
+}
+
+.button-group .signup-button {
+    background-color: #d8736c; /* Light Red */
+}
+
+.button-group .signup-button:hover {
+    background-color: #b55a54; /* Darker Red on hover */
+}
+
+.button-group .signup-button:active {
+    background-color: #993f3c; /* Even darker Red on click */
+}
+
+.footer-text {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #336699; /* Light Blue */
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    font-size: 24px;
+    color: #004080; /* Medium Blue */
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #002147; /* Dark Blue on hover */
+}

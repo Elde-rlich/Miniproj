@@ -1,0 +1,4 @@
+<h2>{{ journal.title }}</h2>
+<p>{{ journal.content }}</p>
+<p>Created on: {{ journal.date_created }}</p>
+<a href="{% url 'journal_list' %}">Back to Journals</a>

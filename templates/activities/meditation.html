@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Dashboard</title>
+    <link rel="stylesheet" href="{% static 'activities/meditation/meditation.css' %}">
+    <link rel="stylesheet" href="{% static 'default/home-style.css' %}">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="{{ user.profile.profile_picture.url }}" alt="Profile Picture" class="profile-img">
+                <div class="profile-info">
+                    <h2>{{ user.username }}</h2>
+                    <p>{{ user.email }}</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-item"><a class="menu-item" href="{% url 'home' %}">Dashboard</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'journal_list' %}">Journal</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'activities' %}">Activities</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'chatbot' %}">Chatbot</a></div>
+                <div class="menu-item"><a class="menu-item" href="{% url 'settings_main' %}">Settings</a></div>
+                <!-- Logout Button -->
+                <div class="menu-item">
+                    <form method="post" action="{% url 'logout' %}">
+                        <button type="submit" class="logout-btn">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </aside>                
+
+        <!-- Main content with curved corners -->
+        <div class="activity-main-area">
+            <main class="activity-main-content">
+
+                <!-- Activities Header -->
+                <div class="activities-header-wrapper">
+                    <header class="activities-header">
+                        <h1>HOW TO MEDITATE</h1>
+                    </header>
+                </div>  
+               <!-- Activity Cards -->
+                <div class="activity-card">
+                    <img src="{% static 'activities/meditation/step1.png' %}" alt="Breathing Exercise" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 1: Find a Comfortable Space</h2>
+                        <p>Choose a quiet place where you won't be disturbed. Sit in a comfortable position on a chair or on the floor with a cushion.</p>
+                    </div>
+                </div>
+		<div class="activity-card">
+                    <img src="{% static 'activities/meditation/step2.png' %}" alt="Breathing Exercise" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 2: Focus on Your Breath</h2>
+                        <p>Close your eyes and begin to breathe deeply. Focus on the sensation of your breath going in and out. Let your thoughts drift by without getting attached.</p>
+                    </div>
+                </div>
+		<div class="activity-card">
+                    <img src="{% static 'activities/meditation/step3.png' %}" alt="Breathing Exercise" class="activity-image">
+                    <div class="activity-info">
+                         <h2>Step 3: Observe Your Thoughts</h2>
+                         <p>As thoughts arise, acknowledge them, then gently bring your attention back to your breathing. Meditation is about observing without judgment.</p>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <img src="{% static 'activities/meditation/step4.png' %}" alt="Yoga Class" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 4: Gradually Increase Time</h2>
+                        <p>Start with a few minutes and gradually increase the time as you get more comfortable with meditation. Aim for consistency over duration.</p>
+                    </div>
+                </div>
+                <div class="activity-card">
+                    <img src="{% static 'activities/meditation/step5.png' %}" alt="Guided Meditation" class="activity-image">
+                    <div class="activity-info">
+                        <h2>Step 5: End with Gratitude</h2>
+                        <p>When you're ready to end, take a moment to express gratitude for the time you spent in meditation. Slowly open your eyes and bring yourself back to the present.</p>
+                    </div>
+                </div>
+
+	    </main>
+	</div>
+    </div>
+</body>
